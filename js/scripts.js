@@ -94,23 +94,21 @@ jQuery(document).ready(function (jQuery) {
 
   function customCounter() {
     // jQuery(function($) {
-    // custom formatting example
-    $(".count-number").data("countToOptions", {
-      formatter(value, options) {
-        return value
-          .toFixed(options.decimals)
-          .replace(/\B(?=(?:\d{3})+(?!\d))/g, ",");
-      },
-    });
+		// custom formatting example
+		jQuery(".count-number").data("countToOptions", {
+			formatter(value, options) {
+				return value.toFixed(options.decimals).replace(/\B(?=(?:\d{3})+(?!\d))/g, ",");
+			},
+		});
 
-    // start all the timers
-    $(".timer").each(count);
+		// start all the timers
+		jQuery(".timer").each(count);
 
-    function count(options) {
-      const $this = $(this);
-      options = $.extend({}, options || {}, $this.data("countToOptions") || {});
-      $this.countTo(options);
-    }
+		function count(options) {
+			const $this = jQuery(this);
+			options = jQuery.extend({}, options || {}, $this.data("countToOptions") || {});
+			$this.countTo(options);
+		}
   }
   // customCounter();
   /**
